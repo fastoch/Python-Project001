@@ -6,10 +6,10 @@ def deposit():
         if amount.isdigit():    # check if inpût is a whole number
             amount = int(amount)    # user input is always a string, so I have to convert it
             if amount > 0:
-                break
+                break           # break the while loop and bring us down to "return amount"
             else:
                 print("Amount must be greater than zero.")
         else:
-            raise Exception("Please enter a positive number!")
+            print("Please enter a positive number!")
     return amount
 
