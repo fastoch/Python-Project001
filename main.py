@@ -32,6 +32,6 @@ def get_number_of_lines():
 def main():                        
     balance = deposit()
     lines = get_number_of_lines()
-    print(balance)
+    print(f"Balance: ${balance}, bet on {lines} lines")
 
 main()
