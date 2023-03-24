@@ -15,7 +15,7 @@ def deposit():
             print("Please enter a positive number!")
     return amount
 
-def get_numeber_of_lines():
+def get_number_of_lines():
     while True:    
         lines = input("Enter the number of lines to bet on (1-" + str(MAX_LINES) + "): ")
         if lines.isdigit():    
@@ -23,14 +23,15 @@ def get_numeber_of_lines():
             if 1 <= lines <= MAX_LINES:
                 break      
             else:
-                print("Amount must be greater than zero.")
+                print("Enter a valid number of lines.")
         else:
-            print("Please enter a positive number!")
+            print("Please enter a number.")
     return lines
 
 # I put my program in the function main() so that if I end my program, I can just call this function again to rerun it
 def main():                        
     balance = deposit()
-
+    lines = get_number_of_lines()
+    print(balance)
 
 main()
