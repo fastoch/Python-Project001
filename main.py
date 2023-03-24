@@ -13,3 +13,4 @@ def deposit():
             print("Please enter a positive number!")
     return amount
 
+deposit()
