@@ -40,7 +40,7 @@ def get_bet():
             else:
                 print(f"Enter a number between ${MIN_BET} and ${MAX_BET}.")
         else: 
-            print("Please enter a number.")
+            print("Please enter a positive number.")
     return amount
             
 
@@ -49,10 +49,10 @@ def main():
     balance = deposit()
     lines = get_number_of_lines()
     bet = get_bet()
-    
+    total_bet = bet * lines
     if lines == 1:
-        print(f"Balance: ${balance}. You bet on {lines} line.")
+        print(f"Current balance: ${balance}. You are betting ${bet} on {lines} line. Total bet is equal to: ${total_bet}")
     else:
-        print(f"Balance: ${balance}. You bet on {lines} lines.")
+        print(f"Current balance: ${balance}. You are betting ${bet} on {lines} lines. Total bet is equal to: ${total_bet}")
 
 main()
