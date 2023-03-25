@@ -1,4 +1,6 @@
 MAX_LINES = 3       # best practice = use capital letters to declare constant values
+MAX_BET = 100
+MIN_BET = 1
 
 # First user inputs = deposit + bet
 def deposit():
@@ -28,10 +30,29 @@ def get_number_of_lines():
             print("Please enter a number.")
     return lines
 
+def get_bet():
+    while True:
+        amount = input(f"Enter the amount of your bet (${MIN_BET}-${MAX_BET}): ")
+        if amount.isdigit():
+            amount = int(amount)
+            if MIN_BET <= amount <= MAX_BET:
+                break
+            else:
+                print(f"Enter a number between ${MIN_BET} and ${MAX_BET}.")
+        else: 
+            print("Please enter a number.")
+    return amount
+            
+
 # I put my program in the function main() so that if I end my program, I can just call this function again to rerun it
 def main():                        
     balance = deposit()
     lines = get_number_of_lines()
-    print(f"Balance: ${balance}, bet on {lines} lines")
+    bet = get_bet()
+    
+    if lines == 1:
+        print(f"Balance: ${balance}. You bet on {lines} line.")
+    else:
+        print(f"Balance: ${balance}. You bet on {lines} lines.")
 
 main()
