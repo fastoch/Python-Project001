@@ -1,6 +1,23 @@
+import random
+
 MAX_LINES = 3       # best practice = use capital letters to declare constant values
 MAX_BET = 100
 MIN_BET = 1
+
+# slot machine features
+ROWS = 3    # lines 
+COLS = 3    # wheels      
+
+# dictionary containing symbols and their count in each wheel
+symbol_count = {
+    "A":2,
+    "B":2,
+    "C":2,
+    "D":2
+}
+
+def get_slot_machine_spin(rows, cols, symbols):
+    all_symbols = []    # list containing all possible symbols
 
 # First user inputs = deposit + bet
 def deposit():
