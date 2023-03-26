@@ -44,12 +44,22 @@ def get_bet():
     return amount
             
 
-# I put my program in the function main() so that if I end my program, I can just call this function again to rerun it
+# I put my program in the function main() so that if I end my program, I can call this function again to rerun it
 def main():                        
     balance = deposit()
     lines = get_number_of_lines()
-    bet = get_bet()
-    total_bet = bet * lines
+
+    # making sure the balance is sufficient to place the bet
+    while True:
+        bet = get_bet()
+        total_bet = bet * lines
+
+        if balance >= total_bet:
+            break
+        else: 
+            print("Your current balance is insufficient to place this bet.")
+            print(f"Your current balance: ${balance}. Your bet: ${total_bet}.")
+
     if lines == 1:
         print(f"Current balance: ${balance}. You are betting ${bet} on {lines} line. Total bet is equal to: ${total_bet}")
     else:
