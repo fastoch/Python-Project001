@@ -17,7 +17,19 @@ symbol_count = {
 }
 
 def get_slot_machine_spin(rows, cols, symbols):
-    all_symbols = []    # list containing all possible symbols
+    # making a list which will contain all possible symbols
+    all_symbols = []    
+    for symbol, symbol_count in symbols.items():    # for each entry in my dictionary...
+        for i in range(symbol_count):               # ...append the symbol to my list as much times as its count value
+            all_symbols.append(symbol)
+    # Once we got our list of symbols, we need to select what values will go in every single column
+    columns = []
+    for col in range(cols):
+        column = []
+        current_symbols = all_symbols[:]    # we actually use a copy of the all_symbols list...
+        # ... because we pick a symbol and we remove it from the list , so that we don't pick it again
+        for row in range(rows):
+            value = random.choice(all_symbols)
 
 # First user inputs = deposit + bet
 def deposit():
