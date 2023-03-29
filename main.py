@@ -39,6 +39,12 @@ def get_slot_machine_spin(rows, cols, symbols):
     
     return columns
 
+def print_slot_machine(columns):
+    # TRANSPOSING our columns (currently layed out as rows) into actual columns
+    for row in range(len(columns[0])):
+        for column in columns:  # loop through of all of my columns and only print the first value
+            print(column[row], "|")
+            
 # First user inputs = deposit + bet
 def deposit():
     while True:     # keep asking the user to enter a deposit amount until he gives a valid amount 
