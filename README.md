@@ -1,5 +1,5 @@
 https://www.youtube.com/watch?v=th4OBktqK1I&t=24s  
-@32:00/55:03
+@34:00/55:03
 
 # Making a text-based slot machine  
 The user will deposit a certain amount of money. 

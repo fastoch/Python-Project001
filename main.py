@@ -42,9 +42,13 @@ def get_slot_machine_spin(rows, cols, symbols):
 def print_slot_machine(columns):
     # TRANSPOSING our columns (currently layed out as rows) into actual columns
     for row in range(len(columns[0])):
-        for column in columns:  # loop through of all of my columns and only print the first value
-            print(column[row], "|")
-            
+        # loop through of all of my columns and only print the first value
+        for index, column in enumerate(columns):    # The pipe separator should not appear after the last column...
+            if index != len(columns) - 1:
+                print(column[row], "|")             # ...which is why I use index + enumerate
+            else:
+                print(column[row])
+
 # First user inputs = deposit + bet
 def deposit():
     while True:     # keep asking the user to enter a deposit amount until he gives a valid amount 
