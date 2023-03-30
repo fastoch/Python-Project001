@@ -17,7 +17,6 @@ symbol_count = {
 }
 
 def get_slot_machine_spin(rows, cols, symbols):
-    
     # making a list which will contain all possible symbols
     all_symbols = []    
     for symbol, symbol_count in symbols.items():    # for each entry in my dictionary...
@@ -37,14 +36,15 @@ def get_slot_machine_spin(rows, cols, symbols):
             column.append(value)                        # add this random value to the current column   
         columns.append(column)                          # add the current column to my columns list
     
-    return columns
+    return columns                                      # columns is a list of lists
 
 def print_slot_machine(columns):
     # TRANSPOSING our columns (currently layed out as rows) into actual columns
+    # number of rows = number of elements in each of our columns
     for row in range(len(columns[0])):
         # loop through of all of my columns and only print the first value
-        for index, column in enumerate(columns):    # The pipe separator should not appear after the last column...
-            if index != len(columns) - 1:
+        for index, column in enumerate(columns):    
+            if index != len(columns) - 1:           # The pipe separator should not appear after the last column...
                 print(column[row], "|")             # ...which is why I use index + enumerate
             else:
                 print(column[row])
