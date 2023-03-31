@@ -40,12 +40,12 @@ def get_slot_machine_spin(rows, cols, symbols):
 
 def print_slot_machine(columns):
     # TRANSPOSING our columns (currently layed out as rows) into actual columns
-    # number of rows = number of elements in each of our columns
-    for row in range(len(columns[0])):
+    # we say that we "transpose the matrix"
+    for row in range(len(columns[0])):  # number of rows = number of elements in each of our columns
         # loop through of all of my columns and only print the first value
-        for index, column in enumerate(columns):    
-            if index != len(columns) - 1:           # The pipe separator should not appear after the last column...
-                print(column[row], "|")             # ...which is why I use index + enumerate
+        for index, column in enumerate(columns):    # I use index + enumerate...
+            if index != len(columns) - 1:           # ...because the pipe separator should not appear after the last column
+                print(column[row], "|")             # using the pipe to separate columns
             else:
                 print(column[row])
 
@@ -111,5 +111,8 @@ def main():
         print(f"Current balance: ${balance}. You are betting ${bet} on {lines} line. Total bet is equal to: ${total_bet}")
     else:
         print(f"Current balance: ${balance}. You are betting ${bet} on {lines} lines. Total bet is equal to: ${total_bet}")
+
+    slots = get_slot_machine_spin(ROWS, COLS, symbol_count)
+    print_slot_machine(slots)
 
 main()
